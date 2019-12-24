@@ -1,0 +1,44 @@
+.side_bar{
+  display: inline-block;
+  height: 100vh;
+  width: 300px;
+  background-color:#2f3e51;
+  font-weight: bold;
+  
+
+  &__user_name{
+    background-color:#253141;
+    width: 100%;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 16px;
+
+    .top_items{
+      height: 20px;
+      width: 260px;
+    }
+
+    .top_items__icons{
+      width: 60px;
+    }
+  }
+  
+  &__new_group{
+    padding-left: 20px;
+    color: #ffffff;
+
+    .group{
+      padding-top: 20px;
+      font-size: 15px;
+    }
+
+    .massages{
+      padding-top: 5px;
+      font-size: 11px;
+    }
+  }
+}
+
