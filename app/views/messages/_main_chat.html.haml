@@ -1,0 +1,32 @@
+.main_chat
+  .main_chat__group_info
+    .group_names
+      test
+      .member_names
+        Member
+
+    
+    .edit 
+    =link_to " # ", class: "edit" do
+      Edit
+
+
+  .main_chat__message_list
+    .name_date
+      .name
+        kawata
+      .date
+        2019/12/22
+    .massage
+      おはよう！
+    
+  .main_chat__message_form
+    .new_message
+      .input_box
+        %input.form{name: "text", placeholder: " type a message", type: "text", value: ""}/
+        %label{class: "input_box__image"}
+          = icon('fas', 'image')
+          %input.file{type: "file"}
+      %input.button{name: "text", placeholder: " type a message", type: "submit", value: "Send"}/
+
+    
