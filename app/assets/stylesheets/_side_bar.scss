@@ -24,20 +24,25 @@
     .top_items__icons{
       width: 60px;
     }
+    
+      .icon{
+        color: #ffffff;
+      }
   }
   
   &__new_group{
     padding-left: 20px;
-    color: #ffffff;
 
     .group{
       padding-top: 20px;
       font-size: 15px;
+      color: #ffffff ;
     }
 
     .massages{
       padding-top: 5px;
       font-size: 11px;
+      color: #ffffff;
     }
   }
 }

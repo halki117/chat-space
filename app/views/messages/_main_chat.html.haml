@@ -1,32 +1,26 @@
 .main_chat
   .main_chat__group_info
     .group_names
-      test
+      = @group.name
       .member_names
-        Member
+        - @group.users.each do |user|
+          #{user.name}
 
     
     .edit 
-    =link_to " # ", class: "edit" do
-      Edit
-
-
+      =link_to edit_group_path(@group) do  
+        Edit
+  
+  
   .main_chat__message_list
-    .name_date
-      .name
-        kawata
-      .date
-        2019/12/22
-    .massage
-      おはよう！
-    
-  .main_chat__message_form
-    .new_message
-      .input_box
-        %input.form{name: "text", placeholder: " type a message", type: "text", value: ""}/
-        %label{class: "input_box__image"}
-          = icon('fas', 'image')
-          %input.file{type: "file"}
-      %input.button{name: "text", placeholder: " type a message", type: "submit", value: "Send"}/
+    = render @messages
+  
 
-    
+  .main_chat__message_form
+    = form_for [@group, @message] do |f|
+      .input_box
+        = f.text_field :content, class: 'form', placeholder: 'type a message'
+        = f.label :image, class: 'image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'button'
