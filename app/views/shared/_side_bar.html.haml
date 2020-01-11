@@ -3,14 +3,16 @@
     .top_items
       = current_user.name
     .top_items__icons
-      = link_to do
+      = link_to new_group_path do
         = icon('fas', 'pen-square', class: 'icon')
       = link_to edit_user_path(current_user) do
         = icon('fas', 'cog', class: 'icon')
    
-
   .side_bar__new_group
-    .group
-      techcamp
-    .massages
-      まだメッセージがありません
+    - current_user.groups.each do |group|
+      .chat_group
+        = link_to group_messages_path(group) do
+          .group
+            = group.name
+          .massages
+            = group.show_last_message
