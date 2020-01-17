@@ -62,7 +62,6 @@ $(function(){
   
   $('#new_message').on('submit', function(e){
   e.preventDefault();
-  console.log("aaa")
   var formData = new FormData(this);
   var url = $(this).attr('action')
 
@@ -116,7 +115,7 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
   
